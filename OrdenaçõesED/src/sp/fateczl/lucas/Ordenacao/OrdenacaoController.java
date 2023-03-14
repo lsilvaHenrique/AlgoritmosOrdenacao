@@ -5,13 +5,13 @@ public class OrdenacaoController {
 	public OrdenacaoController() {	}
 	
 	// Implementacao do BubbleSort
-	public void bubbleSort(int v[]) {
-		 for(int i = 0; i < v.length - 1; i++) {    
-		      for(int j = 0; j < v.length - 1 - i; j++) {	       
-		        if(v[j] > v[j + 1]) {
-		          int aux = v[j];
-		          v[j] = v[j + 1];
-		          v[j + 1] = aux;
+	public void bubbleSort(int vetor[]) {
+		 for(int i = 0; i < vetor.length - 1; i++) {    
+		      for(int j = 0; j < vetor.length - 1 - i; j++) {	       
+		        if(vetor[j] > vetor[j + 1]) {
+		          int aux = vetor[j];
+		          vetor[j] = vetor[j + 1];
+		          vetor[j + 1] = aux;
 		        }	
 		      }
 		 }
@@ -19,7 +19,6 @@ public class OrdenacaoController {
 	// Fim implementacao
 	
 	// Implementacao do MergeSort
-	
 	public void mergeSort(int tamanho, int[] vetor) {
 		int elementos = 1;
 	    int inicio, meio, fim;
@@ -39,7 +38,7 @@ public class OrdenacaoController {
 	      	elementos = elementos * 2;
 	   }
 	}
-
+	
 	private static void intercala(int[] vetor, int inicio, int meio, int fim) { 
 		int novoVetor[] = new int[fim - inicio];  
 		int i = inicio;
@@ -50,27 +49,23 @@ public class OrdenacaoController {
 			if(vetor[i] <= vetor[m]) {
 				novoVetor[pos] = vetor[i];
 				pos = pos + 1;
-				i = i + 1;
-     
+				i = i + 1;   
 			} else {
 				novoVetor[pos] = vetor[m];
 				pos = pos + 1;
 				m = m + 1;
 			}
 		}
-    
 		while(i < meio) {
 			novoVetor[pos] = vetor[i];
 			pos = pos + 1;
 			i = i + 1;
 		}
-    
 		while(m < fim) {
 			novoVetor[pos] = vetor[m];
 			pos = pos + 1;
 			m = m + 1;
 		}
-    
 		for(pos = 0, i = inicio; i < fim; i++, pos++) {
 			vetor[i] = novoVetor[pos];
 		}
